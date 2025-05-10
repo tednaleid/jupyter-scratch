@@ -25,9 +25,25 @@ Create a new project (creates the `myproject` directory):
 
 ```
 uv init myproject
+cd myproject
+uv add ipykernel jupyterlab
+source .venv/bin/activate
 ```
 
-If you're using an existing directory that has a `pyproject.toml`, you can use `uv sync` to install dependencies.
+If you're using an existing directory (or a clone of this repo) that has a `pyproject.toml`, you can install dependencies using:
+
+```bash
+uv sync
+```
+
+If you're in a VSCode terminal, you'll want to restart it after running `uv sync` to pick up the new virtual environment.
+
+It should have the directory prefix added to the prompt.
+
+
+# Installing Dependencies in a New Project
+
+These should be installed in a clone of this repo, but if you've created a new directory/project, you can add the various kernels and tools using these instructions.
 
 
 ## Python linting and deependencies
@@ -44,11 +60,20 @@ uv run ruff
 
 ## Jupyter Notebook/Kernel Setup
 
-To run Jupyter Notebooks, you'll need to have ipykernel installed.
+To run a Jupyter Labs instance to run Jupyter Notebooks, you can run:
 
 ```bash
 uv add ipykernel
+uv add jupyterlab
 ```
+
+And run it:
+
+```bash
+jupyter-lab
+```
+
+This should open a new window in your browser with Jupyter Labs.
 
 ### To Create a notebook
 
