@@ -40,6 +40,10 @@ If you're in a VSCode terminal, you'll want to restart it after running `uv sync
 
 It should have the directory prefix added to the prompt.
 
+If it doesn't, make sure that VSCode has these settings:
+
+- Press Cmd+Shift+P → "Python: Select Interpreter" → Choose .venv/bin/python
+- Cmd-, search for "python.terminal.activateEnvironment" set to true
 
 # Installing Dependencies in a New Project
 
@@ -94,7 +98,7 @@ In the upper right, click on the kernel, choose "Select Another Kernel" -> "Jupy
 
 ```bash
 brew install deno
-deno jupyter
+deno jupyter --install
 ```
 
 In the upper right, click on the kernel, choose "Select Another Kernel" -> "Jupyter Kernel" -> "Deno".
